@@ -17,7 +17,7 @@ class GamesController < ApplicationController
   end
 
   def included?
-    @word.chars.sort.all? { |letter| @grid.include?(letter) }
+    @word.chars.sort.all? { |letter| @word.count(letter) <= @grid.count(letter) }
   end
 
   def english_word?
