@@ -17,7 +17,9 @@ class GamesController < ApplicationController
   end
 
   def included?
-    @word.chars.sort.all? { |letter| @word.count(letter) <= @grid.count(letter) }
+    @word.chars.sort.all? do |letter|
+      @word.count(letter) <= @grid.count(letter)
+    end
   end
 
   def english_word?
@@ -36,7 +38,7 @@ class GamesController < ApplicationController
 
     included? ?
       english_word? ?
-        @result = "Congratulation! #{@word} is a valid English word." :
+        @result = "Woohoo! #{@word} is a valid English word." :
         @result = "Sorry but #{@word} is not an English word."
       : @result = "Sorry, but #{@word} can’t be built out of #{grid_letters}."
   end
