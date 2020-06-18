@@ -18,8 +18,20 @@ p {
 
 .letters {
   display: flex;
+  margin-bottom: 24px;
 }
 
 body {
   font-family: "Helvetica"
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.container-score h1 {
+  display: flex;
+  justify-content: center;
 }
